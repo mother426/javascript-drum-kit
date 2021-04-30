@@ -73,5 +73,9 @@ document.addEventListener("keydown", (event) => {
 });
 
 const buttonAnimation = (key) => {
-  console.log(key);
+  const active = document.querySelector("." + key);
+  active.classList.add("pressed");
+  setTimeout(() => {
+    active.classList.remove("pressed");
+  }, 100);
 };
