@@ -66,6 +66,6 @@ document.addEventListener("keydown", (event) => {
       snare.play();
       break;
     default: 
-      console.log(this.innerHTML);
+      console.log(event.key);
   }
 })
