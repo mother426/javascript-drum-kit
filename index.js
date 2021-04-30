@@ -1,5 +1,6 @@
 for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    buttonAnimation(this.innerHTML);
     switch (this.innerHTML) {
       case "d":
         const tom1 = new Audio("sounds/tom-1.mp3");
@@ -29,13 +30,14 @@ for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
         const snare = new Audio("sounds/snare.mp3");
         snare.play();
         break;
-      default: 
+      default:
         console.log(this.innerHTML);
     }
   });
 }
 
 document.addEventListener("keydown", (event) => {
+  buttonAnimation(event.key);
   switch (event.key) {
     case "d":
       const tom1 = new Audio("sounds/tom-1.mp3");
@@ -65,7 +67,11 @@ document.addEventListener("keydown", (event) => {
       const snare = new Audio("sounds/snare.mp3");
       snare.play();
       break;
-    default: 
+    default:
       console.log(event.key);
   }
-})
+});
+
+const buttonAnimation = (key) => {
+  console.log(key);
+};
